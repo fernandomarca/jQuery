@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .req{
+      background-color: blueviolet;
+      width: 0px;
+      height: 30px;
+    }
+
+    @keyframes afterOpacity{
+      0%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+    .req:after{
+      content: "html 95%";
+      margin-left: 5px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      transition: opacity 1s;
+      animation: afterOpacity 3s;
+    }
+
+    
+
+  </style>
+</head>
+<body>
+  <h1 class="titulo">Esse é um título H1</h1>
+
+  <h1>outro titulo</h1>
+
+  <button class="btn">Animate</button>
+
+  <div class="req"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+    $(".req").animate({
+      width:'300px',
+    },2000);
+    
+    //callback
+    $(".btn").click(()=>{
+      $(".req").hide(2000,()=>{
+        console.log('botao escondido')
+      });
+    });
+
+</script>
+</body>
+</html>
